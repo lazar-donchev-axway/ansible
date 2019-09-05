@@ -1,7 +1,16 @@
 ---
 # tasks file for donchev
 
-- name: check terraform version 
-  shell: terraform -v
+- name: get unzip
+  package:
+    name: unzip
+    state: present
+- name: get terraform bin
+  shell: wget "https://releases.hashicorp.com/terraform/0.12.8/terraform_0.12.8_linux_amd64.zip" 
+- name: unzip
+  shell: unzip terraform_0.12.8_linux_amd64.zip
+- name: cp to bin dir
+  shell: cp terraform ~/bin/
+
 
 ...
