@@ -11,6 +11,6 @@
   shell: unzip terraform_0.12.8_linux_amd64.zip
 - name: cp to bin dir
   shell: cp terraform ~/bin/
-
-
+- name: version 
+  shell: terraform -v 
 ...
